@@ -54,7 +54,7 @@ class SetWords
 
         submit_button.click
         
-        sleep(1)
+        sleep(5)
         #descarga //a[contains(.,'Download')]
         download_button = wait.until do
             driver.find_element(:xpath, "//a[contains(.,'Download')]")
