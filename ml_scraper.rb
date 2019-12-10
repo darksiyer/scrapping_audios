@@ -5,20 +5,26 @@ require_relative 'interactors/scraping_organizer'
 
 class MlScraper
   def initialize
+    array = CSV.parse(File.read("palabras.csv"), headers: true)
+    english_words = array.map{|row| row[3] }
+
+    array.by_col[3] #columna de palabras en ingles
+
     # Initilize the driver with our desired browser
     @driver = Selenium::WebDriver.for :chrome
 
     # Define search string
+    
+    
     @search_str = 'carros 4x4 diesel'
 
     # Navigate to mercadolibre
-    @driver.get 'https://www.mercadolibre.com.co'
+    @driver.get 'https://soundoftext.com/'
 
     # Define global timeout threshold
     @wait = Selenium::WebDriver::Wait.new(timeout: 10) # seconds
 
-    array = CSV.parse(File.read("palabras.csv"), headers: true)
-    table.by_col[3] #columna de palabras en ingles
+    
 
   end
 
