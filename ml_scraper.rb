@@ -1,5 +1,6 @@
 require 'selenium-webdriver'
 require 'interactor'
+require 'csv'
 require_relative 'interactors/scraping_organizer'
 
 class MlScraper
@@ -15,6 +16,10 @@ class MlScraper
 
     # Define global timeout threshold
     @wait = Selenium::WebDriver::Wait.new(timeout: 10) # seconds
+
+    array = CSV.parse(File.read("palabras.csv"), headers: true)
+    table.by_col[3] #columna de palabras en ingles
+
   end
 
   def scrape
