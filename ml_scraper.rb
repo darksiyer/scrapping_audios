@@ -8,7 +8,7 @@ class MlScraper
     array = CSV.parse(File.read("palabras.csv"), headers: true)
     english_words = array.map{|row| row[3] }
 
-    array.by_col[3] #columna de palabras en ingles
+    array.by_col[1] #columna de palabras en ingles
 
     # Initilize the driver with our desired browser
     @driver = Selenium::WebDriver.for :chrome
@@ -22,7 +22,7 @@ class MlScraper
     @driver.get 'https://soundoftext.com/'
 
     # Define global timeout threshold
-    @wait = Selenium::WebDriver::Wait.new(timeout: 10) # seconds
+    @wait = Selenium::WebDriver::Wait.new(timeout: 40) # seconds
 
     
 

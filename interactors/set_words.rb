@@ -53,7 +53,7 @@ class SetWords
         end
 
         submit_button.click
-        
+            
         sleep(5)
         #descarga //a[contains(.,'Download')]
         download_button = wait.until do
@@ -62,7 +62,8 @@ class SetWords
         end
         download_button.click()
 
-        driver.navigate.refresh
+        #driver.navigate.refresh
+       
 
     end
   end
